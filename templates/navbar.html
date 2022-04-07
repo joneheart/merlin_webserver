@@ -1,9 +1,13 @@
 {% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/navbar.css' %}">
+{#<link rel="stylesheet" type="text/css" href="{% static 'style/donate.css' %}">#}
+{% endblock %}
 <header class="header header--loggedIn">
-    <div class="container">
+    <div class="align container">
         <a href="{% url 'home' %}" class="header__logo">
-            <img src="{% static 'images/logo.svg' %}" />
-            <h1>StudyBuddy</h1>
+            <img src="{% static 'images/logo/512x512_Blue&White.png' %}" />
+            <h1>Merlin Bot</h1>
         </a>
         <form class="header__search" method="GET" action="{% url 'home' %}">
             <label>
@@ -16,9 +20,11 @@
                 <input name="q" placeholder="Search for posts" />
             </label>
         </form>
+        <a class='cat0lit' href="/">home</a>
+        <a class='cat0lit' href="{% url 'documentation' %}">documentation</a>
+        <a class='cat0lit' href="/">community</a>
+        <a class='cat0lit' href="{% url 'donate' %}">donate</a>
         <nav class="header__menu">
-
-
             <!-- Logged In -->
             {% if request.user.is_authenticated %}
             <div class="header__user">
@@ -77,3 +83,20 @@
 {% else %}
 <a href="{% url 'login' %}">Login</a>
 {% endif %} -->
+
+<div class="footer">
+    <div class="footer-1">
+        <h5 class="footer-content">성배를 찾아나서는 아서왕의 기사들</h5>
+        <h5 class="footer-content">팀장. 조시욱</h5>
+        <h5 class="footer-content">팀원. 윤정기, 이성호, 김호, 정심일 </h5>
+        <h5 class="footer-content">관리자. 정심일</h5>                     {# 이 부분은 바꾸셔도 됩니다#}
+        <h5 class="footer-content">E-mail. tladlf33@naver.com</h5>      {# 이 부분은 바꾸셔도 됩니다#}
+    </div>
+    <div class="footer-3">
+        <h5 class="terms">Terms</h5>
+        <h5 class="policies">Policies</h5>
+    </div>
+    <div class="footer-2">
+        <h5 class="footer-content">copyrightⓒ성배를 찾아나서는 아서왕의 기사들 ALL Right Reserved </h5>
+    </div>
+</div>

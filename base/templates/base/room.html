@@ -15,7 +15,7 @@
               </path>
             </svg>
           </a>
-          <h3>Study Room</h3>
+          <h3>Q & A Section</h3>
         </div>
         {% if room.host == request.user %}
         <div class="room__topRight">
@@ -63,13 +63,12 @@
                 <img src="{{room.host.avatar.url}}" />
               </div>
               <span>@{{room.host.username}}</span>
+              
             </a>
           </div>
-          <!-- <div class="room__details">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, tenetur laudantium? Dicta repellendus
-            rerum consectetur, voluptatem repudiandae eum ea porro cupiditate provident nulla, deserunt, ab ipsum
-            corporis laboriosam deleniti molestias?
-          </div> -->
+          <div class="room__details">
+            {{room.description | linebreaksbr }}
+          </div>
           <span class="room__topics">{{room.topic}}</span>
         </div>
 

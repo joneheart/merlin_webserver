@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.urls import path
 from . import views
 
@@ -11,6 +12,7 @@ urlpatterns = [
     path('profile/<str:pk>/', views.userProfile, name="user-profile"),
 
     path('create-room/', views.createRoom, name="create-room"),
+    path('create-document/', views.createDocument, name="create-document"),
     path('update-room/<str:pk>/', views.updateRoom, name="update-room"),
     path('delete-room/<str:pk>/', views.deleteRoom, name="delete-room"),
     path('delete-message/<str:pk>/', views.deleteMessage, name="delete-message"),
@@ -19,4 +21,11 @@ urlpatterns = [
 
     path('topics/', views.topicsPage, name="topics"),
     path('activity/', views.activityPage, name="activity"),
+
+    path('documentation/',views.document, name='documentation'),
+    
+    # paypal urls are included.
+    path('donate/',views.donate, name="donate"),
+    path('paypal-return', views.paypal_return, name='paypal-return'),
+    path('paypal-cancel', views.paypal_cancel, name='paypal-cancel'),
 ]

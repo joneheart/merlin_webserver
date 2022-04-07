@@ -1,0 +1,122 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+    {# message section #}
+{#    <div class="paymentsystem">#}
+{#    {% if messages %}#}
+{#        <ul class="messages">#}
+{#            {% for message in messages %}#}
+{#                <li>{{ message }}</li>#}
+{#            {% endfor %}#}
+{#        </ul>#}
+{#    {% endif %}#}
+{#    {{ form.render }}#}
+{#    </div>#}
+
+
+    <div class="subscribe-warp">
+        <h3>구독 옵션 및 금액</h3>
+    </div>
+    <div class="month-year-warp">
+        <div class="month-warp">
+            <div class="month-content">
+                <ul>
+                    <li>
+                        <h3>merlin-bot</h3>
+                        <h4>ERP-bot</h4>
+                        <hr>
+                    </li>
+                    <li>
+                        <h4>매달 <h2>US $4.0</h2></h4>
+                        <h5> 한달 동안 구독</h5>
+                    </li>
+                </ul>
+{#                <div class="paymentsystem">#}
+{#                    {% if messages %}#}
+{#                      <ul class="messages">#}
+{#                         {% for message in messages %}#}
+{#                            <li>{{ message }}</li>#}
+{#                        {% endfor %}#}
+{#                      </ul>#}
+{#                    {% endif %}#}
+{#                    {{ form.render }}#}
+{#                </div>#}
+                <a class="payment-bnt" id="payment-bnt">
+                    <div class="paymentsystem">
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {{ form.render }}
+                    </div>
+{#                    <p>구독</p>#}
+                </a>
+            </div>
+        </div>
+        <div class="year-warp">
+            <div class="year-content">
+                <ul>
+                    <li>
+                        <h3>merlin-bot</h3>
+                        <h4>ERP-bot</h4>
+                        <hr>
+                    </li>
+                    <li>
+                        <h4>매년 <h2 class="line-through">US $48.0</h2></h4>
+                        <h2>US $10.0</h2>
+                        <h5> 일년 동안 구독</h5>
+                    </li>
+                </ul>
+                <a class="payment-bnt" id="payment-bnt">
+                    <div class="paymentsystem">
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {{ form_1.render }}
+                    </div>
+{#                    <p>구독</p>#}
+                </a>
+{#                <a href="/" class="payment-bnt" id="payment-bnt"><p>구독</p></a>#}
+            </div>
+        </div>
+    </div>
+    <h1 class="service-title">service-list</h1>
+    <div class="option-warp">
+        <table>
+            <tr>
+                <th></th>
+                <th>free-merlin-bot</th>
+                <th>merlin-bot-pro</th>
+            </tr>
+            <tr>
+                <td>출/퇴근 체크</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>노래</td>
+                <td class="check" ></td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>일정 관리</td>
+                <td class="check"></td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>그외 기타기능</td>
+                <td class="check"></td>
+                <td class="check">✔</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

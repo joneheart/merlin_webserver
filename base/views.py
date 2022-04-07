@@ -1,11 +1,17 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
-from .models import Room, Topic, Message, User
-from .forms import RoomForm, UserForm, MyUserCreationForm
+from .models import Room, Topic, Message, User, Document
+from .forms import DocumentForm, RoomForm, UserForm, MyUserCreationForm
+
+import uuid
+from django.conf import settings
+from decimal import Decimal
+from paypal.standard.forms import PayPalPaymentsForm                        #payment module.
 
 # Create your views here.
 
@@ -129,7 +135,28 @@ def createRoom(request):
         return redirect('home')
 
     context = {'form': form, 'topics': topics}
+
     return render(request, 'base/room_form.html', context)
+
+@login_required(login_url='login')
+def createDocument(request):
+    form = DocumentForm()
+    topics = Topic.objects.all()
+    if request.method == 'POST':
+        topic_name = request.POST.get('topic')
+        topic, created = Topic.objects.get_or_create(name=topic_name)
+
+        Room.objects.create(
+            host=request.user,
+            topic=topic,
+            name=request.POST.get('name'),
+            description=request.POST.get('description'),
+        )
+        return redirect('/documentation/')
+
+    context = {'form': form, 'topics': topics}
+
+    return render(request, 'base/document_form.html', context)
 
 
 @login_required(login_url='login')
@@ -164,7 +191,6 @@ def deleteRoom(request, pk):
         room.delete()
         return redirect('home')
     return render(request, 'base/delete.html', {'obj': room})
-
 
 @login_required(login_url='login')
 def deleteMessage(request, pk):
@@ -202,3 +228,41 @@ def topicsPage(request):
 def activityPage(request):
     room_messages = Message.objects.all()
     return render(request, 'base/activity.html', {'room_messages': room_messages})
+
+def document(request):
+    return render(request, 'base/document.html')
+
+def donate(request):
+    host = request.get_host()
+    paypal_dict = {
+        'business'      : settings.PAYPAL_RECEIVER_EMAIL,
+        'amount'        : '4.00',
+        'item_name'     : 'Product 1',
+        'invoice'       : str(uuid.uuid4()),
+        'currency_code' : 'USD',
+        'notify_url'    : f'http://{host}{reverse("paypal-ipn")}',
+        'return_url'    : f'http://{host}{reverse("paypal-return")}',
+        'cancel_return' : f'http://{host}{reverse("paypal-cancel")}',     
+    }
+    paypal_dict_1 = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '10.00',
+        'item_name': 'Product 2',
+        'invoice': str(uuid.uuid4()),
+        'currency_code': 'USD',
+        'notify_url': f'http://{host}{reverse("paypal-ipn")}',
+        'return_url': f'http://{host}{reverse("paypal-return")}',
+        'cancel_return': f'http://{host}{reverse("paypal-cancel")}',
+    }
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    form_1 = PayPalPaymentsForm(initial=paypal_dict_1)
+    context = {'form':form, "form_1":form_1}
+    return render(request, 'base/donate.html', context)
+
+def paypal_return(request):
+    messages.success(request, 'You\'ve successfully made a payment!')
+    return redirect('/donate/')
+
+def paypal_cancel(request):
+    messages.error(request, 'Your order has been cancelled.')
+    return redirect('/donate/')
