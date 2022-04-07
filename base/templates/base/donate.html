@@ -45,13 +45,13 @@
 {#                </div>#}
                 <a class="payment-bnt" id="payment-bnt">
                     <div class="paymentsystem">
-                        {% if messages %}
-                            <ul class="messages">
-                                {% for message in messages %}
-                                    <li>{{ message }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
+{#                        {% if messages %}#}
+{#                            <ul class="messages">#}
+{#                                {% for message in messages %}#}
+{#                                    <li>{{ message }}</li>#}
+{#                                {% endfor %}#}
+{#                            </ul>#}
+{#                        {% endif %}#}
                         {{ form.render }}
                     </div>
 {#                    <p>구독</p>#}
@@ -74,13 +74,6 @@
                 </ul>
                 <a class="payment-bnt" id="payment-bnt">
                     <div class="paymentsystem">
-                        {% if messages %}
-                            <ul class="messages">
-                                {% for message in messages %}
-                                    <li>{{ message }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
                         {{ form_1.render }}
                     </div>
 {#                    <p>구독</p>#}
