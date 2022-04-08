@@ -236,7 +236,7 @@ def donate(request):
     host = request.get_host()
     paypal_dict = {
         'business'      : settings.PAYPAL_RECEIVER_EMAIL,
-        'amount'        : '4.00',
+        'amount'        : '5.99',
         'item_name'     : 'Product 1',
         'invoice'       : str(uuid.uuid4()),
         'currency_code' : 'USD',
@@ -246,8 +246,48 @@ def donate(request):
     }
     paypal_dict_1 = {
         'business': settings.PAYPAL_RECEIVER_EMAIL,
-        'amount': '10.00',
+        'amount': '8.99',
         'item_name': 'Product 2',
+        'invoice': str(uuid.uuid4()),
+        'currency_code': 'USD',
+        'notify_url': f'http://{host}{reverse("paypal-ipn")}',
+        'return_url': f'http://{host}{reverse("paypal-return")}',
+        'cancel_return': f'http://{host}{reverse("paypal-cancel")}',
+    }
+    paypal_dict_2 = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '14.99',
+        'item_name': 'Product 3',
+        'invoice': str(uuid.uuid4()),
+        'currency_code': 'USD',
+        'notify_url': f'http://{host}{reverse("paypal-ipn")}',
+        'return_url': f'http://{host}{reverse("paypal-return")}',
+        'cancel_return': f'http://{host}{reverse("paypal-cancel")}',
+    }
+    paypal_dict_3 = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '72.00',
+        'item_name': 'Product 4',
+        'invoice': str(uuid.uuid4()),
+        'currency_code': 'USD',
+        'notify_url': f'http://{host}{reverse("paypal-ipn")}',
+        'return_url': f'http://{host}{reverse("paypal-return")}',
+        'cancel_return': f'http://{host}{reverse("paypal-cancel")}',
+    }
+    paypal_dict_4 = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '108.00',
+        'item_name': 'Product 5',
+        'invoice': str(uuid.uuid4()),
+        'currency_code': 'USD',
+        'notify_url': f'http://{host}{reverse("paypal-ipn")}',
+        'return_url': f'http://{host}{reverse("paypal-return")}',
+        'cancel_return': f'http://{host}{reverse("paypal-cancel")}',
+    }
+    paypal_dict_5 = {
+        'business': settings.PAYPAL_RECEIVER_EMAIL,
+        'amount': '180.00',
+        'item_name': 'Product 6',
         'invoice': str(uuid.uuid4()),
         'currency_code': 'USD',
         'notify_url': f'http://{host}{reverse("paypal-ipn")}',
@@ -256,7 +296,12 @@ def donate(request):
     }
     form = PayPalPaymentsForm(initial=paypal_dict)
     form_1 = PayPalPaymentsForm(initial=paypal_dict_1)
-    context = {'form':form, "form_1":form_1}
+    form_2 = PayPalPaymentsForm(initial=paypal_dict_2)
+    form_3 = PayPalPaymentsForm(initial=paypal_dict_3)
+    form_4 = PayPalPaymentsForm(initial=paypal_dict_4)
+    form_5 = PayPalPaymentsForm(initial=paypal_dict_5)
+    context = {'form':form, "form_1":form_1,"form_2":form_2,
+               "form_3":form_3, "form_4":form_4, "form_5":form_5}
     return render(request, 'base/donate.html', context)
 
 def paypal_return(request):

@@ -18,6 +18,36 @@ ul{
 p{
     margin-top: 13px;
 }
+.select-kit{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+}
+.starter-kit-sel{
+
+}
+
+.advanced-kit-sel{
+    margin-left: 20px;
+}
+.premium-kit-sel{
+    margin-left: 20px;
+}
+.starter-kit-sel:link{
+    color: #151515;
+}
+
+.clicked{
+    color: rgb(88 101 242);
+}
+
+.starter-kit-sel:hover, .advanced-kit-sel:hover, .premium-kit-sel:hover{
+    cursor: pointer;
+}
+
 .month-year-warp{
     width: 100%;
     height: 500px;
@@ -25,7 +55,7 @@ p{
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
 
 }
 .month-warp{
@@ -50,6 +80,7 @@ p{
     justify-content: center;
     transform: scale(1.0);
     transition   : 0.2s ease;
+    margin-left: 200px;
 
 }
 .month-content:hover{
@@ -76,6 +107,7 @@ p{
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
+    margin-right: 200px;
 
 }
 .year-content:hover{
@@ -120,8 +152,8 @@ p{
 }
 
 table{
-    width: 600px;
-    height: 300px;
+    width: 650px;
+    height: 100px;
     margin-top: 40px;
     border-radius: 20px;
     border-collapse: collapse;

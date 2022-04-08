@@ -17,99 +17,165 @@
 
 
     <div class="subscribe-warp">
-        <h3>구독 옵션 및 금액</h3>
+        <h3>후원 옵션 및 금액</h3>
     </div>
+    <div class="select-kit">
+        <a class="starter-kit-sel div2" id="starter-kit-sel">STARTER KIT</a>
+        <a class="advanced-kit-sel div2" id="advanced-kit-sel">ADVANCED KIT</a>
+        <a class="premium-kit-sel div2" id="premium-kit-sel">PREMIUM KIT</a>
+    </div>
+    <hr>
     <div class="month-year-warp">
         <div class="month-warp">
             <div class="month-content">
-                <ul>
+                <ul class="starter-kit" id="starter-kit">
                     <li>
                         <h3>merlin-bot</h3>
-                        <h4>ERP-bot</h4>
+                        <h4>STARTER KIT</h4>
                         <hr>
                     </li>
                     <li>
-                        <h4>매달 <h2>US $4.0</h2></h4>
-                        <h5> 한달 동안 구독</h5>
+                        <h4>매달 <h2>US $5.99</h2></h4>
+                        <h5> 한달 동안 후원</h5>
                     </li>
                 </ul>
-{#                <div class="paymentsystem">#}
-{#                    {% if messages %}#}
-{#                      <ul class="messages">#}
-{#                         {% for message in messages %}#}
-{#                            <li>{{ message }}</li>#}
-{#                        {% endfor %}#}
-{#                      </ul>#}
-{#                    {% endif %}#}
-{#                    {{ form.render }}#}
-{#                </div>#}
-                <a class="payment-bnt" id="payment-bnt">
-                    <div class="paymentsystem">
-{#                        {% if messages %}#}
-{#                            <ul class="messages">#}
-{#                                {% for message in messages %}#}
-{#                                    <li>{{ message }}</li>#}
-{#                                {% endfor %}#}
-{#                            </ul>#}
-{#                        {% endif %}#}
+                <ul class="advanced-kit" id="advanced-kit">
+                    <li>
+                        <h3>merlin-bot</h3>
+                        <h4>ADVANCED KIT</h4>
+                        <hr>
+                    </li>
+                    <li>
+                        <h4>매달 <h2>US $8.99</h2></h4>
+                        <h5> 한달 동안 후원</h5>
+                    </li>
+                </ul>
+                <ul class="premium-kit" id="premium-kit">
+                    <li>
+                        <h3>merlin-bot</h3>
+                        <h4>PREMIUM KIT</h4>
+                        <hr>
+                    </li>
+                    <li>
+                        <h4>매달 <h2>US $14.99</h2></h4>
+                        <h5> 한달 동안 후원</h5>
+                    </li>
+                </ul>
+                <a class="payment-bnt" id="starter-kit-bnt">
+                    <div class="paymentsystem" >
                         {{ form.render }}
                     </div>
-{#                    <p>구독</p>#}
+                </a>
+                 <a class="payment-bnt" id="advanced-kit-bnt">
+                    <div class="paymentsystem" >
+                        {{ form_1.render }}
+                    </div>
+                </a>
+                 <a class="payment-bnt" id="premium-kit-bnt">
+                    <div class="paymentsystem" >
+                        {{ form_2.render }}
+                    </div>
                 </a>
             </div>
         </div>
         <div class="year-warp">
             <div class="year-content">
-                <ul>
+                <ul class="starter-kit" id="starter-kit-year">
                     <li>
                         <h3>merlin-bot</h3>
-                        <h4>ERP-bot</h4>
+                        <h4>STARTER KIT</h4>
                         <hr>
                     </li>
                     <li>
-                        <h4>매년 <h2 class="line-through">US $48.0</h2></h4>
-                        <h2>US $10.0</h2>
-                        <h5> 일년 동안 구독</h5>
+                        <h4>매년 <h2 class="line-through">US $108</h2></h4>
+                        <h2>US $72.0</h2>
+                        <h5> 일년 동안 후원</h5>
                     </li>
                 </ul>
-                <a class="payment-bnt" id="payment-bnt">
-                    <div class="paymentsystem">
-                        {{ form_1.render }}
+                <ul class="advanced-kit" id="advanced-kit-year">
+                    <li>
+                        <h3>merlin-bot</h3>
+                        <h4>ADVANCED KIT</h4>
+                        <hr>
+                    </li>
+                    <li>
+                        <h4>매년 <h2 class="line-through">US $144</h2></h4>
+                        <h2>US $108.0</h2>
+                        <h5> 일년 동안 후원</h5>
+                    </li>
+                </ul>
+                <ul class="premium-kit" id="premium-kit-year">
+                    <li>
+                        <h3>merlin-bot</h3>
+                        <h4>PREMIUM KIT</h4>
+                        <hr>
+                    </li>
+                    <li>
+                        <h4>매년 <h2 class="line-through">US $216</h2></h4>
+                        <h2>US $180.0</h2>
+                        <h5> 일년 동안 후원</h5>
+                    </li>
+                </ul>
+                <a class="payment-bnt" id="starter-kit-year-bnt">
+                    <div class="paymentsystem" >
+                        {{ form_3.render }}
                     </div>
-{#                    <p>구독</p>#}
                 </a>
-{#                <a href="/" class="payment-bnt" id="payment-bnt"><p>구독</p></a>#}
+                 <a class="payment-bnt" id="advanced-kit-year-bnt">
+                    <div class="paymentsystem" >
+                        {{ form_4.render }}
+                    </div>
+                </a>
+                 <a class="payment-bnt" id="premium-kit-year-bnt">
+                    <div class="paymentsystem" >
+                        {{ form_5.render }}
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-    <h1 class="service-title">service-list</h1>
+    <h1 class="service-title">service-list(beta version)</h1>
     <div class="option-warp">
         <table>
             <tr>
                 <th></th>
-                <th>free-merlin-bot</th>
-                <th>merlin-bot-pro</th>
+                <th>STARTER KIT</th>
+                <th>ADVANCED KIT</th>
+                <th>PREMIUM KIT</th>
+                 <th>TRIAL KIT (1MONTH FREE)</th>
             </tr>
             <tr>
                 <td>출/퇴근 체크</td>
                 <td class="check">✔</td>
                 <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
             </tr>
             <tr>
-                <td>노래</td>
-                <td class="check" ></td>
+                <td>음악</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
                 <td class="check">✔</td>
             </tr>
             <tr>
                 <td>일정 관리</td>
-                <td class="check"></td>
-                <td class="check">✔</td>
+                <td class="check">x</td>
+                <td class="check">x</td>
+                <td class="check">x</td>
+                <td class="check">x</td>
             </tr>
             <tr>
                 <td>그외 기타기능</td>
-                <td class="check"></td>
-                <td class="check">✔</td>
+                <td class="check">x</td>
+                <td class="check">x</td>
+                <td class="check">x</td>
+                <td class="check">x</td>
             </tr>
         </table>
+        <div>
+            <p>x: 추가예정</p>
+        </div>
     </div>
+
 {% endblock %}
