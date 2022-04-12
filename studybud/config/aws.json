@@ -1,7 +1,7 @@
 {
     "AWS": {
-        "ACCESS_KEY_ID": "AKIA55DV3VEN6Y4LEIOG",
-        "SECRET_ACCESS_KEY": "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",
+        "ACCESS_KEY_ID": "",
+        "SECRET_ACCESS_KEY": "",
         "STORAGE_BUCKET_NAME": "merlinproject"
     }
 }
