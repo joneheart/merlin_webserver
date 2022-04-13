@@ -6,7 +6,7 @@
 
 * 멀린 봇 장고 웹서버로 구현한 사이트 : [멀린 웹 서버 링크!](https://merlindc.click/)
 
-* 멀린봇 앱서버 리포지토리 : [원격 저장소 링크!](https://github.com/hopaom/merlin_bot.git)
+* 멀린봇 앱 서버 리포지토리 : [원격 저장소 링크!](https://github.com/hopaom/merlin_bot.git)
 
 * 멀린봇 디스코드 초대 링크 : [디스코드에 초대하기 링크!](https://discord.com/api/oauth2/authorize?client_id=950766027535421460&permissions=8&scope=applications.commands%20bot)
 
