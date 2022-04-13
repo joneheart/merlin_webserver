@@ -66,4 +66,4 @@ Electron 베이스로 제작이되었으며 디스코드보다 먼저 제작된 
 하기위해 
 
 ### 아키텍쳐
-
+![architecture](https://user-images.githubusercontent.com/96563227/163099046-11fa82bd-c17f-46ee-8b56-812d689bb404.jpg)
