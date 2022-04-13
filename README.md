@@ -1,4 +1,4 @@
-# 디스코드 ERP 멀린 봇 AI-WEB development 앱 서버 
+# 디스코드 ERP 멀린 봇 AI-WEB development 웹 서버 
 ```powershell
 저희 프로젝트는 웹서버와 앱서버 총 2개의 서버를 제작 하였습니다.
 ```
