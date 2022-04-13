@@ -1,3 +1,38 @@
+# 디스코드 ERP 멀린 봇 AI-WEB development 앱 서버 
+```powershell
+저희 프로젝트는 웹서버와 앱서버 총 2개의 서버를 제작 하였습니다.
+```
+## 이 팀 프로젝트는 1조 성배를 찾아나서는 아서왕의 기사단들에게서 생성 되었습니다.
+
+* 멀린 봇 장고 웹서버로 구현한 사이트 : [멀린 웹 서버 링크!](https://merlindc.click/)
+
+* 멀린봇 장고 웹서버 리포지토리 : [원격 저장소 링크!](https://github.com/joneheart/merlin_webserver)
+
+* 멀린봇 디스코드 초대 링크 : [디스코드에 초대하기 링크!](https://discord.com/api/oauth2/authorize?client_id=950766027535421460&permissions=8&scope=applications.commands%20bot)
+
+* 멀린 봇 파이널 프로젝트 발표 영상 [유튜브 영상 링크!](https://youtu.be/vVbSRfmq_n8)
+
+
+
+## 1조 멀린 개발 인원 (5명)
+
+* Team Leader :
+    - 조시욱 깃-허브 [Click](https://github.com/github01main)
+    - 개발 업무 포지션 : 멀린앱 `플레이어`, `엑셀`, `캘린더` 초기 코드 작성 및 업무 전반 프로그레스 마일스톤 기획 및 보안 관련 이슈, 팀원들 교육.
+    - ex) 소스코드 예제 작성 후 데모 버전 실행, 업무 효율성을 위해 장고 프로젝트용 자동화 파워쉘 작성 후 배포. 
+* Team Members :
+    - 윤정기 깃-허브 [Click](https://github.com/lution88)
+    - 개발 업무 포지션 : 멀린앱 플레이어 개발 및 테스트 디버깅 후 `Discord API` 로우 코드 `Sellenium` 로우 코드 적용, 멀린 봇 배포 버전 패키징.
+    - 이성호 깃-허브 [Click](https://github.com/Hosio123)
+    - 개발 업무 포지션 : GCP(구글클라우드플랫폼)을 이용한 캘린더 공유 및 생성 삭제 리스트 등 `calendar API`, `discord API` 크로스플랫폼 데이터 전송 연동 및 배포 버전 패키징.
+    - ex) `JWT(jason web token)`발행 후 멀린 봇이 업로드 되어있는 중간경로 헤로쿠 서버에 쿼리 헤로쿠 서버에서 브릿지를 통하여 GCP에 캘린더 데이터 쿼리 후 디스코드 채널로 재귀.
+    - 김 &nbsp;&nbsp; 호 깃-허브 [Click](https://github.com/hopaom)
+    - UI개선을 위해 `discord-buttons-plugin`활용. Time Recorder 기능과 그에 필요한 데이터를 `openpyxl` 을 활용하여 Excel형태로 저장 후 aws S3 연동 및 배포, Heroku를 통한 앱서버 배포, jwt를 DB에 저장하기 위해 MySQL aws RDS 에 연결.
+    - 정심일 깃-허브 [Click](https://github.com/joneheart)
+    - 개발 업무 포지션 : 멀린봇 커뮤니티 및 후원 웹서버 제작(Django, HTML, CSS, Javascript) 및 배포(AWS Elastic Elastic Beanstalk)
+
+
+
 ## 1조 멀린 기획
 
 ### 개발의도 -
@@ -23,7 +58,7 @@ Electron 베이스로 제작이되었으며 디스코드보다 먼저 제작된 
 공식 홈페이지 처럼 제작하면 되지 않을까란 생각하였고, 전산형 기능을 앱에 추가하고 그 내용을 웹사이트에
 작성 후 피드백 및 후원계좌를 넣는 느낌으로 프로젝트의 방향성을 잡게되었습니다.
 
-### 작업 프로그레스 -
+### 웹서버 젝작 의도 -
 
 멀린 디스코드 봇에 대한 웹사이트를 제작하여 커뮤니티 공간과 월간 연간 후원을 할 수 있는 페이지를 제작하여
 디스코드 봇을 이용자들과 개발자간의 소통과 이용자들간의 소통을 원활하게 해서 사용하다가 생기는 버그나 문제점을
