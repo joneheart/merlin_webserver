@@ -65,5 +65,5 @@ Electron 베이스로 제작이되었으며 디스코드보다 먼저 제작된 
 바로 공유 및 해결이 빠르게 될것이라는 기대효과와 결제를 통한 디스코드 봇의 편리한 기능을 좀 더 사용할 수 있도록
 하기위해 
 
-### 아키텍쳐
+### 웹 서버 아키텍쳐
 ![architecture](https://user-images.githubusercontent.com/96563227/163099046-11fa82bd-c17f-46ee-8b56-812d689bb404.jpg)
